@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Nini 💗</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background: linear-gradient(120deg,#ffd6e8,#fff0f6,#e0f7ff);
+  font-family: 'Nunito', sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
+  text-align:center;
+}
+
+h1{
+  font-family:'Pacifico', cursive;
+  font-size:3rem;
+  color:#ff4d88;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 5px #ffb3c6;}
+  to{text-shadow:0 0 15px #ff4d88;}
+}
+
+.subtitle{
+  margin-top:10px;
+  font-size:1.2rem;
+  color:#555;
+}
+
+.card{
+  background:rgba(255,255,255,0.7);
+  border-radius:20px;
+  padding:25px;
+  margin:30px 0;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+}
+
+.message{
+  font-size:1.1rem;
+  color:#444;
+  line-height:1.8;
+}
+
+.animals{
+  font-size:2.5rem;
+  margin-top:15px;
+}
+
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation: rise 6s linear infinite;
+  opacity:0.7;
+}
+
+@keyframes rise{
+  from{transform:translateY(0); opacity:1;}
+  to{transform:translateY(-110vh); opacity:0;}
+}
+
+.secret{
+  margin-top:20px;
+  padding:15px;
+  background:#ffe6f0;
+  border-radius:15px;
+  cursor:pointer;
+  font-weight:600;
+  color:#ff3377;
+}
+
+.secret-message{
+  display:none;
+  margin-top:15px;
+  font-size:1.1rem;
+  color:#333;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:scale(0.9);}
+  to{opacity:1; transform:scale(1);}
+}
+
+.footer{
+  margin-top:40px;
+  font-size:1rem;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>My Sweet Nini 💖</h1>
+  <p class="subtitle">Even from miles away, I’m holding you close 🤍</p>
+
+  <div class="card">
+    <p class="message">
+      My love, I know your periods are ongoing right now 🩸💔  
+      I know it hurts, I know it’s uncomfortable, and I know it drains you.  
+      But please remember — **you’re not alone.**  
+      I’m right here, loving you, worrying about you, and wishing I could hold you tight 🫂💞
+    </p>
+    <div class="animals">🐻🤍🐰🌸🐱</div>
+  </div>
+
+  <div class="card">
+    <p class="message">
+      You mean **everything** to me, Nini.  
+      My mornings feel better because you exist.  
+      My nights feel warmer because I love you.  
+      Even this distance can’t reduce how deeply I care for you 🌍💗
+    </p>
+    <div class="animals">🦊💗🐼✨🦄</div>
+  </div>
+
+  <div class="card">
+    <p class="message">
+      Please rest well, drink water, keep yourself warm 🫖🧸  
+      Imagine me sitting beside you, holding your hand softly 🤍  
+      Every pain you feel — I feel it with you.
+    </p>
+    <div class="animals">☁️🐨💞🌙</div>
+  </div>
+
+  <div class="secret" onclick="reveal()">
+    💌 Tap here for a secret message just for you 💌
+  </div>
+  <div class="secret-message" id="secretMsg">
+    No matter what, no matter when —  
+    **I choose you. Always.**  
+    You’re my safe place, my love, my Nini 💖
+  </div>
+
+  <div class="footer">
+    Made with endless love 💗  
+    From your boy who loves you more than words 💞
+  </div>
+</div>
+
+<script>
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.animationDuration = (4 + Math.random()*4) + "s";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),8000);
+}
+setInterval(createHeart,400);
+
+function reveal(){
+  document.getElementById("secretMsg").style.display="block";
+}
+</script>
+
+</body>
+</html>
